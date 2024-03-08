@@ -21,6 +21,11 @@ class Student:
         submit_grade(course, assessment, grade): Submits a grade for a student in a course.
     """
 
+    name = ""
+    enrolled_courses = 0
+    enrolled_courses = []
+    grades = dict
+
     def __init__(self, name, student_id):
         """
         Initializes a Student object with a name and an ID.
@@ -29,6 +34,8 @@ class Student:
             name (str): The name of the student.
             student_id (int): The unique ID of the student.
         """
+        self.name = name
+        self.student_id = student_id
         pass
 
 
@@ -42,6 +49,8 @@ class Student:
         Returns:
             None
         """
+        self.enrolled_courses.append(course)
+
         pass
 
     def drop_course(self, course):
@@ -54,6 +63,11 @@ class Student:
         Returns:
             None
         """
+        x=0
+        for item in self.enrolled_courses:
+            if item.course_name == course.course_name:
+               self.enrolled_courses.pop(x)
+            x+=1
         pass
 
 
@@ -69,4 +83,5 @@ class Student:
         Returns:
             None
         """
+        self.grades[course] = grade
         pass

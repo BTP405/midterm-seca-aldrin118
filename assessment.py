@@ -14,8 +14,11 @@ class Assessment:
     Methods:
         None
     """
+    assessment_type = ""
+
 
     def __init__(self, assessment_type):
+
         """
         Initializes an Assessment object with a type.
 
